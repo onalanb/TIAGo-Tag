@@ -1,0 +1,32 @@
+Run on the first terminal to launch gazebo simulator with three tiago bots:
+---------------------------------------------------------------------------
+cd ~/tiago_public_ws
+source devel/setup.bash
+catkin build tiago_tag
+source devel/setup.bash
+roslaunch tiago_tag threetiago_tag.launch
+
+Run on the second terminal to launch tiago_tag controller:
+----------------------------------------------------------
+cd ~/tiago_public_ws
+source devel/setup.bash
+catkin build tiago_tag
+source devel/setup.bash
+rosrun tiago_tag tag.py
+
+For wider camera angle on gazebo world to watch the tag game easier:
+--------------------------------------------------------------------
+GUI --> Camera --> Pose:
+  x     : 15
+  y     : -15
+  z     : 15
+  roll  : -0.000001
+  pitch : 0.725600
+  yaw   : 1.956
+
+Troubleshooting:
+----------------
+1. To make sure both the launch file and the tag script are executable, run:
+chmod +x src/tiago_tag/launch/threetiago_tag.launch
+chmod +x src/tiago_tag/scripts/tag.py
+
